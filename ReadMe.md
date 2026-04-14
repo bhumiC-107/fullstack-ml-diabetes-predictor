@@ -2,8 +2,7 @@
 
 This project delivers a complete, machine learning solution for predicting diabetes risk. Using the PIMA Indians Diabetes Database, this application was built from the ground up, starting with in-depth exploratory data analysis and culminating in a trained XGBoost model deployed as a REST API with Flask. To showcase the practical application, the project includes an interactive web interface built with HTML and JavaScript that allows users to get real-time predictions from the live model.
 
-**LIVE DEMO: https://fullstack-ml-diabetes-predictor.vercel.app/**
-
+LIVE DEMO: https://fullstack-ml-diabetes-predictor.vercel.app/
 
 ## Features
 
