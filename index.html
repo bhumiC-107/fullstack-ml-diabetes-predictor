@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetes Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- Header -->
+    <div class="header-card">
+      <div class="badge">ML-Powered Tool</div>
+      <h1>Diabetes Risk Predictor</h1>
+      <p>Enter your clinical values below to receive an instant prediction.</p>
+    </div>
+
+    <!-- Form -->
+    <div class="form-card">
+      <form id="PredictionForm">
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="pregnancies">Pregnancies</label>
+            <input type="number" id="pregnancies" name="Pregnancies" placeholder="e.g. 6" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="glucose">Glucose</label>
+            <input type="number" id="glucose" name="Glucose" placeholder="e.g. 148" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="blood-pressure">Blood Pressure</label>
+            <input type="number" id="blood-pressure" name="BloodPressure" placeholder="e.g. 72" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="skin-thickness">Skin Thickness</label>
+            <input type="number" id="skin-thickness" name="SkinThickness" placeholder="e.g. 35" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="insulin">Insulin</label>
+            <input type="number" id="insulin" name="Insulin" placeholder="e.g. 0" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="bmi">BMI</label>
+            <input type="number" id="bmi" name="BMI" step="0.1" placeholder="e.g. 33.6" min="0" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="dpf">Diabetes Pedigree Function</label>
+            <input type="number" id="dpf" name="DiabetesPedigreeFunction" step="0.001" placeholder="e.g. 0.627" min="0" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="Age" placeholder="e.g. 50" min="0" required>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-predict" id="predict-btn">Predict</button>
+      </form>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading-indicator">
+      <div class="spinner"></div>
+      <p>Analyzing your data&hellip;</p>
+    </div>
+
+    <!-- Result -->
+    <div id="result-container"></div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
