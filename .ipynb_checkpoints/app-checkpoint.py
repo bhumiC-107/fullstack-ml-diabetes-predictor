@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify  # ✅ Fix 1: import request, jsonify
+from flask_cors import CORS
 import joblib
 import pandas as pd
 
@@ -9,7 +10,7 @@ print(f"Model pipeline from '{pipeline_path}' loaded successfully.")
 
 # --- Create the Flask App Instance ---
 app = Flask(__name__)
-
+CORS(app)  # Enable CORS for all routes
 # --- Home Endpoint ---
 @app.route('/', methods=['GET'])
 def home():
@@ -42,9 +43,9 @@ def predict():
         if data is None:
             return "No JSON received", 400
     except Exception as e:
-        return f"Error parsing JSON: {e}", 400  # ✅ Fix 2: was missing f-string prefix
+        return f"Error parsing JSON: {e}", 400  #  Fix 2: was missing f-string prefix
 
-    print(f"Received data: {data}")  # ✅ Fix 3: was inside except block (wrong indentation)
+    print(f"Received data: {data}")  #  Fix 3: was inside except block (wrong indentation)
 
     try:
         input_df = pd.DataFrame([data])
@@ -74,9 +75,9 @@ def predict():
     }
 
     print(f"Sending response: {response_data}")
-    return jsonify(response_data)  # ✅ Fix 5: removed dead code that was after return
+    return jsonify(response_data)  #  Fix 5: removed dead code that was after return
 
 
-# ✅ Fix 6: was indented inside predict() function
+#  Fix 6: was indented inside predict() function
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=10000)
