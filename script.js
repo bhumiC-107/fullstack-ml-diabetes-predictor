@@ -89,7 +89,7 @@ predictionForm.addEventListener('submit', function (event) {
   console.log("Sending payload:", data);
   showLoading();
 
-  fetch('http://127.0.0.1:5000/predict', {
+  fetch('https://fullstack-ml-diabetes-predictor.onrender.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
